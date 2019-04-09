@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import axios from "axios";
 
 class Form extends Component {
   constructor() {
@@ -23,15 +24,18 @@ class Form extends Component {
       name: "",
       hobby: ""
     })
+
+    axios.post("http://localhost:8081/hobbiesList", this.state)
+    .then(res => console.log(res.data));
   }
 
   render() {
     const {name, hobby} = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
-        <input onChange={this.handleChange} name="name" value={name} type="text" placeholder="Enter Name" />
-        <input onChange={this.handleChange} name="hobby" value={hobby} type="text" placeholder="Enter Hobby" />
-        <button>Submit</button>
+        <input className="formInput" onChange={this.handleChange} name="name" value={name} type="text" placeholder="Enter Name" />
+        <input className="formInput" onChange={this.handleChange} name="hobby" value={hobby} type="text" placeholder="Enter Hobby" />
+        <button className="Button" >Submit</button>
         </form>
     )
   }

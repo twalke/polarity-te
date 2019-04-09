@@ -16,13 +16,11 @@ class TodoService extends Component {
       items: [...ps.items, item]
     }))
   }
-  // keep track of state here
-  // create methods for updating the item list here
+
   render() {
     return (
       <div>
         <Form submit={this.addItem} />
-      {/* list and form rendered here */}
       </div>
     )
   }

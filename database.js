@@ -1,7 +1,4 @@
-const uuid = require("uuid");
-
 const Hobby = function(hobby) {
-  this._id = uuid();
   this.name = hobby.name;
   this.selectedActivity = hobby.selectedActivity;
 }
@@ -20,4 +17,6 @@ Database.prototype.save = function(hobby) {
   return newHobby;
 }
 
-module.exports = new Database();
+module.exports = {
+    DB: 'mongodb://localhost:27017/hobbiesDB'
+}
