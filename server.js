@@ -10,7 +10,7 @@ app.use(express.json());
 app.use("/api/hobbies", require("./routes/hobbies"));
 const database = require("./database");
 
-// var Hobby = require('./hobbiesTest');
+let Hobby = require('./models/hobbies');
 
 mongoose.connect('mongodb://localhost:27017/hobbiesDB',{useNewUrlParser: true})
 .then(()=> {
